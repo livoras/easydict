@@ -12,5 +12,6 @@ setup(
   description="Super easy and lightweight dictionary tool for linux.",
   scripts=["scripts/easydict"],
   packages=["easydict"],
-  include_package_data=True
+  include_package_data=True,
+  test_suit='tests'
 )
