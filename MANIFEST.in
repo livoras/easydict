@@ -1,0 +1,4 @@
+include setup.py
+recursive-include easydict *
+recursive-include scripts *
+recursive-exclude easydict *.pyc

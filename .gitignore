@@ -52,3 +52,9 @@ coverage.xml
 # Sphinx documentation
 docs/_build/
 
+
+# MANIFEST
+MANIFEST
+
+*.pyc
+*.pyo
