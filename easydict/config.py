@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 TRANSLATE_URL = 'http://fanyi.youdao.com/translate?smartresult=dict&smartresult=rule&smartresult=ugc&sessionFrom=dict.top'
+
 HEADERS = {
   'Accept': 'application/json, text/javascript, */*; q=0.01',
   'Accept-Encoding': 'gzip,deflate,sdch',
@@ -17,6 +18,7 @@ HEADERS = {
 LOGGER_NAME = 'easydict'
 
 LOG_FORMAT = "%(levelname)s :: %(asctime)s :: %(name)s :: %(message)s"
+
 TRIVAL_DATA = dict(
   type='AUTO',
   doctype='json',
