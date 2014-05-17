@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 
+import threading
 import json
 
+import config
+from logger import logger
 from http import post
-from . import config
-from .logger import logger
 
 def get_result_by_keyword(keyword):
   TRANSLATE_URL = config.TRANSLATE_URL
