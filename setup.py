@@ -13,5 +13,6 @@ setup(
   scripts=["scripts/easydict"],
   packages=["easydict"],
   include_package_data=True,
+  install_requires=[],
   test_suit='tests'
 )
