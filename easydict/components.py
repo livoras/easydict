@@ -42,6 +42,7 @@ class Tip(gtk.Window):
 
   def _add_content(self):
     self.content = Content()
+    self.content.show()
     self.add(self.content)
 
   def _hide_when_blur(self):
