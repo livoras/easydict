@@ -13,7 +13,10 @@ def get_result_by_keyword(keyword):
   data = dict(i=keyword)
   data.update(config.TRIVAL_DATA)
   result = post(url=TRANSLATE_URL, headers=HEADERS, data=data)
-  result = json.loads(result)
+  try:
+    result = json.loads(result)
+  except:  
+    return None
   for key in (u'elapsedTime', u'errorCode', u'type'):
     del result[key]
   return result

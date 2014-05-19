@@ -50,3 +50,8 @@ class Tip(gtk.Window):
 
   def reset_size(self):
     self.resize(500, 100)
+
+if __name__ == '__main__':
+  tip = Tip()
+  tip.show_all()
+  tip.content.set_content('fuckyou')
