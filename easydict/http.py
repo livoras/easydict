@@ -10,7 +10,10 @@ from logger import logger
 def post(url, headers={}, data={}):
   data = urllib.urlencode(data)
   req = urllib2.Request(url=url, headers=headers, data=data)
-  res = urllib2.urlopen(req)
+  try:
+    res = urllib2.urlopen(req, timeout=2)
+  except:  
+    print 'Timeout..'
 
   # Because the content encoding of the fucking youdao is `gzip`,
   # if you use `res.read()` directly you will get a binary data  

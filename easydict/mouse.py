@@ -53,5 +53,4 @@ def on(event_type, callback):
 
 
 def run():
-  print '...'
   _display.record_enable_context(_ctx, _handler)

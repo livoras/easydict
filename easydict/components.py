@@ -18,10 +18,10 @@ class Content(gtk.TextView):
     self.set_wrap_mode(gtk.WRAP_WORD)
 
   def set_content(self, content):
-    buf = self.get_buffer()
+    buf = gtk.TextBuffer()
     buf.set_text(content)
+    self.set_buffer(buf)
 
-    
 
 class Tip(gtk.Window):
 
@@ -30,6 +30,9 @@ class Tip(gtk.Window):
     self._draw()
     self._add_content()
     self._hide_when_blur()
+    # The way how to show window without focusing
+    # URL: http://stackoverflow.com/questions/2143152/open-a-pygtk-program-but-do-not-activate-it
+    self.set_accept_focus(False)
 
   def _draw(self):
     self.set_decorated(False)
@@ -52,6 +55,23 @@ class Tip(gtk.Window):
     self.resize(500, 100)
 
 if __name__ == '__main__':
+  import time, thread, gtk, gobject
+  gtk.gdk.threads_init()
   tip = Tip()
   tip.show_all()
-  tip.content.set_content('fuckyou')
+  count = [1]
+
+  # The modification of GTK GUI must be in the main loop.
+  # http://unpythonic.blogspot.com/2007/08/using-threads-in-pygtk.html
+  def modify():
+    tip.content.set_content(str(count[0]))
+
+  def fuck():
+    while count[0] < 100:
+      print count[0]
+      count[0] += 1
+      time.sleep(1)
+      gobject.idle_add(modify)    
+
+  thread.start_new_thread(fuck, ())  
+  gtk.main()
