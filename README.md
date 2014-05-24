@@ -11,19 +11,19 @@ For it was my first trial on GUI application of Linux. I have tried hard to make
 
 ## Installation
 
-Easydict depends on `Xlib` for interaction with X system of linux and on `GTK` for GUI supports. So, at first, you need to install thrid librares of both of them in python, throught `apt-get` and `pip`
+Easydict depends on `Xlib` for interaction with X system of linux and on `GTK` for GUI supports. So, at first, you need to install thrid libraries of both of them in python, throught `apt-get` and `pip`.
 
 ```
   sudo apt-get install python-xlib && sudo pip install pygtk
 ```
 
-If pip is not installed on your system you got to install it first.
+If pip is not installed on your system you have to install it first.
 
 ```
   sudo apt-get install pip
 ```
 
-After the preparetions, now, install `easydict`.
+After those preparetions, now, install `easydict`.
 
 ```
   git clone git@github.com:livoras/easydict.git
