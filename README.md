@@ -39,7 +39,7 @@ You can run it using `easydict`.
   easydict
 ```
 
-## TODOS
+## Todos
 
 * Make it bug free
 * Enhance user experience.
